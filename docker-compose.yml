@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgis/postgis:16-3.5-alpine
+    ports:
+      - "58432:5432"
+    environment:
+      POSTGRES_USER: climweb
+      POSTGRES_PASSWORD: climweb
+      POSTGRES_DB: climweb_catalog
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
